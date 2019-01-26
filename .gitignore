@@ -1,0 +1,7 @@
+# Ignore directories created by central.vim
+backup
+swap
+undo
+
+# Ignore the pack directory altogether.
+pack

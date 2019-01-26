@@ -1,0 +1,216 @@
+" My Vim configuration, inspired in part by:
+"
+" 1. https://statico.github.io/vim3.html and https://github.com/statico/dotfiles/blob/master/.vim/vimrc
+" 2. https://tomjwatson.com/blog/vim-tips/
+"
+
+" Per the minpac docs:
+"   `:set nocp` has many side effects. Therefore this should be done
+"   only when 'compatible' is set.
+if &compatible
+  " Because we're in the future.
+  set nocompatible
+endif
+
+" Load package business.
+source ~/.vim/packages.vim
+
+" Add fzf to our runtime path.
+set runtimepath+=/usr/local/opt/fzf
+
+" Get the colors.
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" Because everything is UTF-8.
+set encoding=utf-8
+
+" Disable line wrapping.
+set nowrap
+
+" Essential for filetype plugins.
+filetype plugin indent on
+
+" Because syntax matters.
+syntax on
+
+" Don't wait for a key after Escape in insert mode
+if (has("esckeys"))
+  set noesckeys
+endif
+
+" Color scheme setup.
+" colorscheme base16-eighties
+" colorscheme base16-flat
+colorscheme base16-nord
+" colorscheme base16-oceanicnext
+" colorscheme base16-onedark
+
+" Magic line numbers.
+set number relativenumber
+
+" Indentation.
+set autoindent smartindent breakindent
+set breakindentopt=shift:2
+
+" White space, tabs, and text.
+set autoread                " Don't bother me when a file changes
+set expandtab               " No tabs
+set foldlevelstart=99       " Start with all folds open.
+set formatoptions+=j        " Remove comments when joining lines.
+set hidden                  " Keep buffers around.
+set hlsearch                " highlight matches
+set ignorecase              " Ignore case by default.
+set incsearch               " search as characters are entered
+set list                    " Show whitespace as special chars - see listchars
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
+set shiftround              " Shift to certain columns, not just n spaces
+set shiftwidth=2            " Number of spaces to shift for autoindent or >,<
+set showmatch               " highlight matching [{()}]
+set smartcase               " Lets you search for ALL CAPS
+set softtabstop=2           " Spaces 'feel' like tabs
+set tabstop=2               " The One True Tab
+set textwidth=100           " 100 is the new 80
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion
+set wildmenu                " Show possible completions on command line
+set wildmode=list:longest,full " List all options and complete
+
+if (has("ballooneval"))
+  set noballooneval
+endif
+
+" Remove all the scrollbars.
+set guioptions-=r
+set guioptions-=l
+set guioptions-=R
+set guioptions-=L
+
+" Jump to last cursor position unless it's invalid or in an event handler
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L95
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
+" Font options.
+set guifont=Fira\ Code:h11
+set linespace=2 " Ups the line-height.
+
+" Easier exiting from terminal mode.
+tnoremap <Esc> <C-\><C-n>
+
+" Turn off linewise keys.
+nmap j gj
+nmap k gk
+
+" Use the space key to toggle folds.
+nnoremap <space> za
+vnoremap <space> zf
+
+" Key combos
+nnoremap ; :Buffers<CR>
+nnoremap <Leader>; :Windows<CR>
+nnoremap <Leader>a :Rg<Space>
+nnoremap <Leader>b :BTags<CR>
+nnoremap <Leader>c :term<CR>
+nnoremap <Leader>r :Tags<CR>
+nnoremap <Leader>t :Files<CR>
+
+
+" Because lazy.
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+
+" Sooooo lazy...
+nnoremap <Leader>bd :bdelete<CR>
+
+" Like Command+, but for Vim.
+nnoremap <Leader>, :e ~/.vim/vimrc<CR>
+
+" Splits
+nnoremap <Leader>vs :vs<CR>
+nnoremap <Leader>sp :sp<CR>
+
+" Fugitive
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+
+" Gotta browse them files.
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" For quick session saving and restoring.
+nnoremap <Leader>ss :mksession!<CR>
+nnoremap <Leader>sl :source Session.vim<CR>
+
+" Turn off search highlight.
+nnoremap <Leader><space> :nohlsearch<CR>
+
+" Insert newlines.
+" Via https://stackoverflow.com/questions/6765211/vim-command-to-insert-blank-line-in-normal-mode#6765349
+nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
+nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
+
+" Jump to next/previous linter warning.
+nnoremap ]l :ALENextWrap<CR>
+nnoremap [l :ALEPreviousWrap<CR>
+
+" Sort visually selected lines.
+vnoremap <Leader>s :sort<CR>
+
+" Copy to system clipboard.
+vnoremap <Leader>y "+y<CR>
+
+" Indent if we're at the beginning of a line. Else, do completion.
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Thank you, https://bluz71.github.io/2018/12/04/fuzzy-finding-in-vim-with-fzf.html
+let g:fzf_commits_log_options = '--graph --color=always
+  \ --format="%C(yellow)%h%C(red)%d%C(reset)
+  \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+
+" Command to generate tags file
+let g:fzf_tags_command = 'ctags'
+
+" ALE
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters = { 'eruby': ['erubi'], 'java': [] }
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '▲'
+
+highlight link ALEWarningSign String
+highlight link ALEErrorSign Title
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
+" Add a nicer looking tabline.
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" let g:airline_theme='base16_oceanicnext'
+let g:airline_theme='base16_nord'
+" let g:airline_theme='base16_flat'
+
+" Resize panes when window/terminal gets resize
+autocmd VimResized * :wincmd =
