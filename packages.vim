@@ -14,7 +14,6 @@ call minpac#init({ 'verbose': 3 })
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 " Everything else.
-call minpac#add('/usr/local/opt/fzf')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('chriskempson/base16-vim')
 call minpac#add('docunext/closetag.vim')
