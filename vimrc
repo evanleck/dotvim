@@ -67,7 +67,7 @@ set showmatch               " highlight matching [{()}]
 set smartcase               " Lets you search for ALL CAPS
 set softtabstop=2           " Spaces 'feel' like tabs
 set tabstop=2               " The One True Tab
-set textwidth=100           " 100 is the new 80
+set textwidth=80            " Turns out I kinda like 80...
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion
 set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full " List all options and complete
