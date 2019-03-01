@@ -41,11 +41,7 @@ if (has("esckeys"))
 endif
 
 " Color scheme setup.
-" colorscheme base16-eighties
-" colorscheme base16-flat
 colorscheme base16-nord
-" colorscheme base16-oceanicnext
-" colorscheme base16-onedark
 
 " Magic line numbers.
 set number relativenumber
@@ -201,16 +197,14 @@ let g:ale_sign_warning = '▲'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
+" Airline
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
 " Add a nicer looking tabline.
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" let g:airline_theme='base16_oceanicnext'
 let g:airline_theme='base16_nord'
-" let g:airline_theme='base16_flat'
 
 " Resize panes when window/terminal gets resize
 autocmd VimResized * :wincmd =
