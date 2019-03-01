@@ -106,17 +106,22 @@ vnoremap <space> zf
 
 " Key combos
 nnoremap ; :Buffers<CR>
-nnoremap <Leader>; :Windows<CR>
-nnoremap <Leader>a :Rg<Space>
-nnoremap <Leader>b :BTags<CR>
-nnoremap <Leader>c :term<CR>
-nnoremap <Leader>r :Tags<CR>
-nnoremap <Leader>t :Files<CR>
+nnoremap <silent> <Leader>; :Windows<CR>
+nnoremap <silent> <Leader>a :Rg<Space>
+nnoremap <silent> <Leader>b :BTags<CR>
+nnoremap <silent> <Leader>c :term<CR>
+nnoremap <silent> <Leader>r :Tags<CR>
+nnoremap <silent> <Leader>t :Files<CR>
 
+" Get between splits quicker and easier.
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
 
 " Because lazy.
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <silent> <Leader>w :w<CR>
+nnoremap <silent> <Leader>q :q<CR>
 
 " Sooooo lazy...
 nnoremap <Leader>bd :bdelete<CR>
@@ -125,8 +130,8 @@ nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>, :e ~/.vim/vimrc<CR>
 
 " Splits
-nnoremap <Leader>vs :vs<CR>
-nnoremap <Leader>sp :sp<CR>
+nnoremap <silent> <Leader>vs :vs<CR>
+nnoremap <silent> <Leader>sp :sp<CR>
 
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
