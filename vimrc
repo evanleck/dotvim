@@ -207,8 +207,6 @@ highlight link ALEErrorSign Title
 let g:airline#extensions#ale#enabled = 1
 
 " Add a nicer looking tabline.
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme='base16_nord'
 
 " Resize panes when window/terminal gets resize
