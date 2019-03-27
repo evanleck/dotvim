@@ -15,7 +15,8 @@ call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 " Everything else.
 call minpac#add('airblade/vim-gitgutter')
-call minpac#add('chriskempson/base16-vim')
+" call minpac#add('chriskempson/base16-vim')
+call minpac#add('danielwe/base16-vim')
 call minpac#add('docunext/closetag.vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('her/central.vim')
