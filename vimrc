@@ -168,6 +168,11 @@ vnoremap <Leader>y "+y<CR>
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga) and for a motion/text
+" object (e.g. gaip).
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
