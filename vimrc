@@ -91,7 +91,7 @@ autocmd BufReadPost *
 
 " Font options.
 set guifont=Fira\ Code:h11
-set linespace=2 " Ups the line-height.
+set linespace=1
 
 " Easier exiting from terminal mode.
 tnoremap <Esc> <C-\><C-n>
