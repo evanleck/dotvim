@@ -107,11 +107,11 @@ vnoremap <space> zf
 " Key combos
 nnoremap ; :Buffers<CR>
 nnoremap <silent> <Leader>; :Windows<CR>
-nnoremap <silent> <Leader>a :Rg<Space>
 nnoremap <silent> <Leader>b :BTags<CR>
 nnoremap <silent> <Leader>c :term<CR>
 nnoremap <silent> <Leader>r :Tags<CR>
 nnoremap <silent> <Leader>t :Files<CR>
+nnoremap <Leader>a :Rg<Space>
 
 " Get between splits quicker and easier.
 nnoremap <silent> <C-h> :wincmd h<CR>
