@@ -158,7 +158,7 @@ nnoremap <Leader>sl :source Session.vim<CR>
 nnoremap <Leader><space> :nohlsearch<CR>
 
 " Insert newlines.
-" Via https://stackoverflow.com/questions/6765211/vim-command-to-insert-blank-line-in-normal-mode#6765349
+"   https://stackoverflow.com/a/6765349
 nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
 nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
 
