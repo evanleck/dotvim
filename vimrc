@@ -124,20 +124,20 @@ nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :q<CR>
 
 " Sooooo lazy...
-nnoremap <Leader>bd :bdelete<CR>
+nnoremap <silent> <Leader>bd :Bdelete<CR>
 
 " Like Command+, but for Vim.
-nnoremap <Leader>, :e ~/.vim/vimrc<CR>
+nnoremap <silent> <Leader>, :e ~/.vim/vimrc<CR>
 
 " Splits
 nnoremap <silent> <Leader>vs :vs<CR>
 nnoremap <silent> <Leader>sp :sp<CR>
 
 " Fugitive
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
 
 " Gotta browse them files.
 nnoremap <Leader>n :NERDTreeToggle<CR>
