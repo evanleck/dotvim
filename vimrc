@@ -164,6 +164,10 @@ vnoremap <Leader>s :sort<CR>
 " Copy to system clipboard.
 vnoremap <Leader>y "+y<CR>
 
+" Literal search for the visually highlighted text.
+"   https://vim.fandom.com/wiki/Search_for_visually_selected_text
+vnoremap / y/\V<C-r>=escape(@",'/\')<cr><cr>
+
 " Indent if we're at the beginning of a line. Else, do completion.
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
