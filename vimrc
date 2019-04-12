@@ -96,6 +96,11 @@ set linespace=1
 " Easier exiting from terminal mode.
 tnoremap <Esc> <C-\><C-n>
 
+" Get the fucking alt key to do what I want in FZF...
+"   https://github.com/junegunn/fzf.vim/issues/78#issuecomment-175354775
+tnoremap <a-a> <esc>a
+tnoremap <a-d> <esc>d
+
 " Turn off linewise keys.
 nmap j gj
 nmap k gk
