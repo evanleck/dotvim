@@ -118,6 +118,9 @@ nnoremap <silent> <Leader>r :Tags<CR>
 nnoremap <silent> <Leader>t :Files<CR>
 nnoremap <Leader>a :Rg<Space>
 
+" What have I become?
+nnoremap <silent> <M-x> :Commands<CR>
+
 " Get between splits quicker and easier.
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
