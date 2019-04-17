@@ -52,6 +52,7 @@ set breakindentopt=shift:2
 
 " White space, tabs, and text.
 set autoread                " Don't bother me when a file changes
+set cursorline              " Where am I?
 set expandtab               " No tabs
 set foldlevelstart=99       " Start with all folds open.
 set formatoptions+=j        " Remove comments when joining lines.
@@ -59,6 +60,7 @@ set hidden                  " Keep buffers around.
 set hlsearch                " highlight matches
 set ignorecase              " Ignore case by default.
 set incsearch               " search as characters are entered
+set lazyredraw              " Don't update the screen while executing macros.
 set list                    " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
 set shiftround              " Shift to certain columns, not just n spaces
@@ -68,6 +70,7 @@ set smartcase               " Lets you search for ALL CAPS
 set softtabstop=2           " Spaces 'feel' like tabs
 set tabstop=2               " The One True Tab
 set textwidth=80            " Turns out I kinda like 80...
+set ttyfast                 " Higher, further, faster.
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion
 set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full " List all options and complete
