@@ -41,8 +41,12 @@ if (has("esckeys"))
   set noesckeys
 endif
 
+" Nord
+let g:nord_uniform_status_lines = 1
+let g:nord_cursor_line_number_background = 1
+
 " Color scheme setup.
-colorscheme base16-nord
+colorscheme nord
 
 " Magic line numbers.
 set number relativenumber
@@ -229,9 +233,6 @@ let g:NERDTreeQuitOnOpen = 1
 " Airline
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
-
-" Add a nicer looking tabline.
-let g:airline_theme='base16_nord'
 
 " Resize panes when window/terminal gets resize
 autocmd VimResized * :wincmd =
