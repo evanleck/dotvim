@@ -3,5 +3,8 @@ backup
 swap
 undo
 
-# Ignore the pack directory altogether.
-pack
+# Ignore the plugged directory altogether.
+plugged
+
+# Ignore vim-plug since it's kind of a plugin itself.
+autoload/plug.vim
