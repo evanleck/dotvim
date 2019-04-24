@@ -219,7 +219,6 @@ let g:fzf_tags_command = 'ctags'
 
 " ALE
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_linters = { 'eruby': ['erubi'], 'java': [] }
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
