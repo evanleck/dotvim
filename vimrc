@@ -227,9 +227,6 @@ let g:ale_sign_warning = '▲'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
-" Close NERDTree after opening a file.
-let g:NERDTreeQuitOnOpen = 1
-
 " Airline
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
