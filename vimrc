@@ -2,7 +2,12 @@
 "
 " 1. https://statico.github.io/vim3.html and https://github.com/statico/dotfiles/blob/master/.vim/vimrc
 " 2. https://tomjwatson.com/blog/vim-tips/
+" 3. https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 "
+
+" Remove ALL autocommands for the current group.
+"   http://vimdoc.sourceforge.net/htmldoc/autocmd.html
+:autocmd!
 
 " Per the minpac docs:
 "   `:set nocp` has many side effects. Therefore this should be done
@@ -90,12 +95,20 @@ set guioptions-=l
 set guioptions-=R
 set guioptions-=L
 
-" Jump to last cursor position unless it's invalid or in an event handler
-" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L95
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+augroup vimrc
+  " Clear all autocmds in the group
+  autocmd!
+
+  " Jump to last cursor position unless it's invalid or in an event handler
+  " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L95
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Resize panes when window/terminal gets resize
+  autocmd VimResized * :wincmd =
+augroup END
 
 " Font options.
 set guifont=Fira\ Code:h11
@@ -229,6 +242,3 @@ highlight link ALEErrorSign Title
 " Airline
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
-
-" Resize panes when window/terminal gets resize
-autocmd VimResized * :wincmd =
