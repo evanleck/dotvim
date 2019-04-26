@@ -77,7 +77,6 @@ set breakindentopt=shift:2
 
 " White space, tabs, and text.
 set autoread                " Don't bother me when a file changes
-set cursorline              " Where am I?
 set expandtab               " No tabs
 set foldlevelstart=99       " Start with all folds open.
 set formatoptions+=j        " Remove comments when joining lines.
