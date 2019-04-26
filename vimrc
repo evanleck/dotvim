@@ -79,6 +79,7 @@ set breakindentopt=shift:2
 set autoread                " Don't bother me when a file changes
 set expandtab               " No tabs
 set foldlevelstart=99       " Start with all folds open.
+set formatoptions-=t        " Don't wrap my code lines.
 set formatoptions+=j        " Remove comments when joining lines.
 set hidden                  " Keep buffers around.
 set hlsearch                " highlight matches
