@@ -46,11 +46,8 @@ if (has("esckeys"))
   set noesckeys
 endif
 
-" Nord
-let g:nord_uniform_status_lines = 1
-
 " Color scheme setup.
-colorscheme nord
+colorscheme base16-nord
 
 " Central backup and undo directories.
 "   https://github.com/her/central.vim/blob/master/plugin/central.vim

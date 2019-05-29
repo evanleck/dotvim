@@ -10,8 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Konfekt/FastFold'
 Plug 'airblade/vim-gitgutter'
-Plug 'arcticicestudio/nord-vim'
-" Plug 'danielwe/base16-vim' " When the official repo finally gets updated... Plug('chriskempson/base16-vim')
+Plug 'danielwe/base16-vim' " When the official repo finally gets updated... Plug('chriskempson/base16-vim')
 Plug 'docunext/closetag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'evanleck/vim-svelte'
@@ -27,7 +26,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 
 call plug#end()
