@@ -249,3 +249,5 @@ highlight link ALEErrorSign Title
 " Airline
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
