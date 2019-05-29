@@ -14,6 +14,7 @@ Plug 'arcticicestudio/nord-vim'
 " Plug 'danielwe/base16-vim' " When the official repo finally gets updated... Plug('chriskempson/base16-vim')
 Plug 'docunext/closetag.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'evanleck/vim-svelte'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
