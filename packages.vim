@@ -8,7 +8,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Konfekt/FastFold'
 Plug 'airblade/vim-gitgutter'
 Plug 'danielwe/base16-vim' " When the official repo finally gets updated... Plug('chriskempson/base16-vim')
 Plug 'docunext/closetag.vim'

@@ -74,7 +74,6 @@ set breakindentopt=shift:2
 " White space, tabs, and text.
 set autoread                " Don't bother me when a file changes
 set expandtab               " No tabs
-set foldlevelstart=99       " Start with all folds open.
 set foldmethod=manual       " Force manual folding.
 set formatoptions+=j        " Remove comments when joining lines.
 set formatoptions-=t        " Don't wrap my code lines.
@@ -137,10 +136,6 @@ tnoremap <a-d> <esc>d
 " Turn off linewise keys.
 nmap j gj
 nmap k gk
-
-" Use the space key to toggle folds.
-nnoremap <space> za
-vnoremap <space> zf
 
 " Key combos
 nnoremap ; :Buffers<CR>
@@ -250,10 +245,6 @@ let g:ale_sign_warning = '▲'
 
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
-
-" FastFold
-let g:javaScript_fold = 1
-let g:ruby_fold = 1
 
 " Airline
 " Set this. Airline will handle the rest.
