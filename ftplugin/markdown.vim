@@ -1,2 +1,2 @@
-" Wrap markdown text.
-setlocal wrap
+" Wrap non-comment Markdown text.
+setlocal formatoptions+=t
