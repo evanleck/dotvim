@@ -7,7 +7,7 @@
 
 " Remove ALL autocommands for the current group.
 "   http://vimdoc.sourceforge.net/htmldoc/autocmd.html
-:autocmd!
+autocmd!
 
 " Per the minpac docs:
 "   `:set nocp` has many side effects. Therefore this should be done
