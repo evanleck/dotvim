@@ -80,18 +80,22 @@ set formatoptions-=t        " Don't wrap my code lines.
 set hidden                  " Keep buffers around.
 set hlsearch                " highlight matches
 set ignorecase              " Ignore case by default.
-set nofoldenable            " Start with all folds off.
 set incsearch               " search as characters are entered
 set lazyredraw              " Don't update the screen while executing macros.
 set list                    " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
+set nofoldenable            " Start with all folds off.
+set noshowmode              " Airline does this for us.
 set shiftround              " Shift to certain columns, not just n spaces
 set shiftwidth=2            " Number of spaces to shift for autoindent or >,<
 set showmatch               " highlight matching [{()}]
 set smartcase               " Lets you search for ALL CAPS
 set softtabstop=2           " Spaces 'feel' like tabs
+set splitbelow              " Split horizontal windows below to the current windows
+set splitright              " Split vertical windows right to the current windows
 set tabstop=2               " The One True Tab
 set textwidth=80            " Turns out I kinda like 80...
+set ttyfast                 " Who even knows?
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion
 set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full " List all options and complete
