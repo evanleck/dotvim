@@ -178,7 +178,7 @@ nnoremap <silent> <Leader>sp :sp<CR>
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gc :Gcommit<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gs :call SmartSizedGitStatus()<CR>
 
 " Gotta browse them files.
 nnoremap <Leader>n :NERDTreeToggle<CR>
