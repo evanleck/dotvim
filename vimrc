@@ -146,7 +146,7 @@ nmap k gk
 nnoremap ; :Buffers<CR>
 nnoremap <silent> <Leader>; :Windows<CR>
 nnoremap <silent> <Leader>b :BTags<CR>
-nnoremap <silent> <Leader>c :term<CR>
+nnoremap <silent> <Leader>c :call CreateOrOpenTerminal()<CR>
 nnoremap <silent> <Leader>r :Tags<CR>
 nnoremap <silent> <Leader>t :Files<CR>
 nnoremap <Leader>a :Rg<Space>
