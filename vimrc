@@ -68,7 +68,7 @@ set backup swapfile undofile
 set number relativenumber
 
 " Indentation.
-set autoindent smartindent breakindent
+set autoindent breakindent
 set breakindentopt=shift:2
 
 " White space, tabs, and text.
@@ -92,6 +92,7 @@ set shiftwidth=2                                          " Number of spaces to 
 set showmatch                                             " highlight matching [{()}]
 set smartcase                                             " Lets you search for ALL CAPS
 set softtabstop=2                                         " Spaces 'feel' like tabs
+set laststatus=2                                          " Always show the status line.
 set splitbelow                                            " Split horizontal windows below to the current windows
 set splitright                                            " Split vertical windows right to the current windows
 set tabstop=2                                             " The One True Tab
@@ -171,8 +172,8 @@ nnoremap <silent> <Leader>bd :Bdelete<CR>
 nnoremap <silent> <Leader>, :e ~/.vim/vimrc<CR>
 
 " Splits
-nnoremap <silent> <Leader>vs :vs<CR>
-nnoremap <silent> <Leader>sp :sp<CR>
+nnoremap <silent> <Leader>v :vs<CR>
+nnoremap <silent> <Leader>x :sp<CR>
 
 " Fugitive
 nnoremap <silent> <Leader>gb :Gblame<CR>
@@ -182,10 +183,6 @@ nnoremap <silent> <Leader>gs :call SmartSizedGitStatus()<CR>
 
 " Gotta browse them files.
 nnoremap <Leader>n :NERDTreeToggle<CR>
-
-" For quick session saving and restoring.
-nnoremap <Leader>ss :mksession!<CR>
-nnoremap <Leader>sl :source Session.vim<CR>
 
 " Turn off search highlight.
 nnoremap <Leader><space> :nohlsearch<CR>
@@ -251,8 +248,14 @@ let g:ale_sign_warning = '▲'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
-" Airline
-" Set this. Airline will handle the rest.
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'base16_nord',
+      \ 'active': {
+      \   'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
+      \   'right': [['lineinfo'], ['fileformat', 'fileencoding', 'filetype']]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
