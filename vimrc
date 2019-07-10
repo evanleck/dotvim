@@ -92,7 +92,6 @@ set shiftwidth=2                                          " Number of spaces to 
 set showmatch                                             " highlight matching [{()}]
 set smartcase                                             " Lets you search for ALL CAPS
 set softtabstop=2                                         " Spaces 'feel' like tabs
-set laststatus=2                                          " Always show the status line.
 set splitbelow                                            " Split horizontal windows below to the current windows
 set splitright                                            " Split vertical windows right to the current windows
 set tabstop=2                                             " The One True Tab
@@ -248,14 +247,45 @@ let g:ale_sign_warning = '▲'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
-" Lightline
-let g:lightline = {
-      \ 'colorscheme': 'base16_nord',
-      \ 'active': {
-      \   'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
-      \   'right': [['lineinfo'], ['fileformat', 'fileencoding', 'filetype']]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+" Statusline
+"   http://tdaly.co.uk/projects/vim-statusline-generator/
+set laststatus=2
+set statusline=
+set statusline+=\ %{StatuslineMode()}
+set statusline+=\ |
+set statusline+=\ %{fugitive#head()}
+set statusline+=\ |
+set statusline+=\ %f
+set statusline+=\ %r
+set statusline+=%=
+set statusline+=%{&ff}
+set statusline+=\ |
+set statusline+=\ %{strlen(&fenc)?&fenc:'none'}
+set statusline+=\ |
+set statusline+=\ %y
+set statusline+=\ |
+set statusline+=\ %l
+set statusline+=:
+set statusline+=%L
+set statusline+=\ |
+
+function! StatuslineMode()
+  let l:mode=mode()
+  if l:mode==#"n"
+    return "NORMAL"
+  elseif l:mode==?"v"
+    return "VISUAL"
+  elseif l:mode==#"i"
+    return "INSERT"
+  elseif l:mode==#"R"
+    return "REPLACE"
+  elseif l:mode==?"s"
+    return "SELECT"
+  elseif l:mode==#"t"
+    return "TERMINAL"
+  elseif l:mode==#"c"
+    return "COMMAND"
+  elseif l:mode==#"!"
+    return "SHELL"
+  endif
+endfunction
