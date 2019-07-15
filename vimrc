@@ -186,11 +186,6 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " Turn off search highlight.
 nnoremap <Leader><space> :nohlsearch<CR>
 
-" Insert newlines.
-"   https://stackoverflow.com/a/6765349
-nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
-nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
-
 " Jump to next/previous linter warning.
 nnoremap ]l :ALENextWrap<CR>
 nnoremap [l :ALEPreviousWrap<CR>
