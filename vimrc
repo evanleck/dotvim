@@ -51,15 +51,9 @@ colorscheme base16-nord
 
 " Central backup and undo directories.
 "   https://github.com/her/central.vim/blob/master/plugin/central.vim
-set backupdir=~/.vim/backup
-set directory=~/.vim/swap
-set undodir=~/.vim/undo
-
-for s:dir in [ &backupdir, &directory, &undodir ]
-  if !isdirectory(s:dir)
-    call mkdir(s:dir, 'p')
-  endif
-endfor
+set backupdir^=~/.vim/backup//
+set directory^=~/.vim/swap//
+set undodir^=~/.vim/undo//
 
 " Turn on backup, swap, and undo.
 set backup swapfile undofile
