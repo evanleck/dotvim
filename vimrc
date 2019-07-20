@@ -80,6 +80,7 @@ set list                                                  " Show whitespace as s
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
 set nofoldenable                                          " Start with all folds off.
 set nomodeline                                            " No need for in-buffer settings.
+set noruler                                               " Disable the ruler since we write our own statusline.
 set noshowmode                                            " Airline does this for us.
 set shiftround                                            " Shift to certain columns, not just n spaces
 set shiftwidth=2                                          " Number of spaces to shift for autoindent or >,<
@@ -239,25 +240,7 @@ highlight link ALEErrorSign Title
 " Statusline
 "   http://tdaly.co.uk/projects/vim-statusline-generator/
 set laststatus=2
-set statusline=
-set statusline+=\ %{StatuslineMode()}
-set statusline+=\ |
-set statusline+=\ %{fugitive#head()}
-set statusline+=\ |
-set statusline+=\ %f
-set statusline+=\ %r
-set statusline+=%=
-set statusline+=%{&ff}
-set statusline+=\ |
-set statusline+=\ %{strlen(&fenc)?&fenc:'none'}
-set statusline+=\ |
-set statusline+=\ %y
-set statusline+=\ |
-set statusline+=\ %l
-set statusline+=[%c]
-set statusline+=:
-set statusline+=%L
-set statusline+=\ |
+set statusline=\ %{StatuslineMode()}\ %{fugitive#head()}\ %f\ %r\ %=%{&ff}\ %{strlen(&fenc)?&fenc:'none'}\ %y\ %c:%l/%L\ |
 
 function! StatuslineMode()
   let l:mode=mode()
