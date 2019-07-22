@@ -89,6 +89,7 @@ set smartcase                                             " Lets you search for 
 set softtabstop=2                                         " Spaces 'feel' like tabs
 set splitbelow                                            " Split horizontal windows below to the current windows
 set splitright                                            " Split vertical windows right to the current windows
+set fixendofline                                          " Always end with a new line.
 set tabstop=2                                             " The One True Tab
 set textwidth=80                                          " Turns out I kinda like 80...
 set ttyfast                                               " Who even knows?
@@ -119,6 +120,9 @@ augroup vimrc
 
   " Resize panes when window/terminal gets resize
   autocmd VimResized * :wincmd =
+
+  " Trim trailing whitespace.
+  autocmd BufWritePre * call TrimTrailingWhitespace()
 augroup END
 
 " Font options.
