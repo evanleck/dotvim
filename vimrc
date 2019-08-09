@@ -179,6 +179,9 @@ nnoremap <silent> <Leader>gc :Gcommit<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gs :call SmartSizedGitStatus()<CR>
 
+" Undotree
+nnoremap <silent> <Leader>u :UndotreeToggle<CR>
+
 " Gotta browse them files.
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
