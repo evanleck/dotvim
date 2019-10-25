@@ -82,11 +82,13 @@ set nofoldenable                                          " Start with all folds
 set nomodeline                                            " No need for in-buffer settings.
 set noruler                                               " Disable the ruler since we write our own statusline.
 set noshowmode                                            " Airline does this for us.
+set nospell
 set shiftround                                            " Shift to certain columns, not just n spaces
 set shiftwidth=2                                          " Number of spaces to shift for autoindent or >,<
 set showmatch                                             " highlight matching [{()}]
 set smartcase                                             " Lets you search for ALL CAPS
 set softtabstop=2                                         " Spaces 'feel' like tabs
+set spelllang=en_us
 set splitbelow                                            " Split horizontal windows below to the current windows
 set splitright                                            " Split vertical windows right to the current windows
 set fixendofline                                          " Always end with a new line.
