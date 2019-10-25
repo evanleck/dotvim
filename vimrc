@@ -47,7 +47,8 @@ if (has("esckeys"))
 endif
 
 " Color scheme setup.
-colorscheme base16-nord
+packadd! dracula
+colorscheme dracula
 
 " Central backup and undo directories.
 "   https://github.com/her/central.vim/blob/master/plugin/central.vim
@@ -68,9 +69,11 @@ set breakindentopt=shift:2
 " White space, tabs, and text.
 set autoread                                              " Don't bother me when a file changes
 set expandtab                                             " No tabs
+set fixendofline                                          " Always end with a new line.
 set foldmethod=manual                                     " Force manual folding.
 set formatoptions+=j                                      " Remove comments when joining lines.
 set formatoptions-=t                                      " Don't wrap my code lines.
+set guioptions-=e                                         " Gimme those Vim-native tabs, damnit!
 set hidden                                                " Keep buffers around.
 set hlsearch                                              " highlight matches
 set ignorecase                                            " Ignore case by default.
@@ -78,6 +81,7 @@ set incsearch                                             " search as characters
 set lazyredraw                                            " Don't update the screen while executing macros.
 set list                                                  " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
+set mouse=n                                               " Enable the mouse in normal mode.
 set nofoldenable                                          " Start with all folds off.
 set nomodeline                                            " No need for in-buffer settings.
 set noruler                                               " Disable the ruler since we write our own statusline.
@@ -91,7 +95,7 @@ set softtabstop=2                                         " Spaces 'feel' like t
 set spelllang=en_us
 set splitbelow                                            " Split horizontal windows below to the current windows
 set splitright                                            " Split vertical windows right to the current windows
-set fixendofline                                          " Always end with a new line.
+set synmaxcol=500                                         " Only syntax highlight to the 500th column by default.
 set tabstop=2                                             " The One True Tab
 set textwidth=80                                          " Turns out I kinda like 80...
 set ttyfast                                               " Who even knows?
@@ -129,7 +133,11 @@ augroup END
 
 " Font options.
 set guifont=Fira\ Code:h11
-set linespace=1
+set linespace=2
+
+" Netrw settings
+let g:netrw_liststyle = 3    " Tree style
+let g:netrw_browse_split = 4 " Open files selected in Netrw in the other split.
 
 " Easier exiting from terminal mode.
 tnoremap <Esc> <C-\><C-n>
@@ -143,14 +151,19 @@ tnoremap <a-d> <esc>d
 nmap j gj
 nmap k gk
 
-" Key combos
-nnoremap ; :Buffers<CR>
-nnoremap <silent> <Leader>; :Windows<CR>
-nnoremap <silent> <Leader>b :BTags<CR>
+" Doom Emacs kinda set the stage for this one...
+let mapleader = " "
+
+" Get outta here highlights.
+nnoremap <silent> <esc><esc> :nohlsearch<CR>
+
+" Netrw explorer.
+nnoremap <silent> <Leader>e :50vs +Ex .<CR>
+
+nnoremap <Leader>/ :Rg<Space>
+nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader>c :call CreateOrOpenTerminal()<CR>
-nnoremap <silent> <Leader>r :Tags<CR>
-nnoremap <silent> <Leader>t :Files<CR>
-nnoremap <Leader>a :Rg<Space>
+nnoremap <silent> <Leader>s :Tags<CR>
 
 " What have I become?
 nnoremap <silent> <M-x> :Commands<CR>
@@ -161,34 +174,31 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
-" Because lazy.
-nnoremap <silent> <Leader>w :w<CR>
-nnoremap <silent> <Leader>q :q<CR>
+" Files
+nnoremap <silent> <Leader>fs :w<CR>
+nnoremap <silent> <Leader>fx :Delete<CR>
+nnoremap <Leader>fm :Rename<Space>
 
-" Sooooo lazy...
+" Buffers
+nnoremap <silent> <Leader>, :Buffers<CR>
+nnoremap <silent> <Leader>bb :Buffers<CR>
 nnoremap <silent> <Leader>bd :Bdelete<CR>
+nnoremap <silent> <Leader>bk :Bdelete<CR>
 
-" Like Command+, but for Vim.
-nnoremap <silent> <Leader>, :e ~/.vim/vimrc<CR>
-
-" Splits
-nnoremap <silent> <Leader>v :vs<CR>
-nnoremap <silent> <Leader>x :sp<CR>
+" Splits and windows.
+nnoremap <silent> <Leader>wq :q<CR>
+nnoremap <silent> <Leader>ws :sp<CR>
+nnoremap <silent> <Leader>wv :vs<CR>
+nnoremap <silent> <Leader>wo :only<CR>
 
 " Fugitive
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gc :Gcommit<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>gs :call SmartSizedGitStatus()<CR>
-
-" Undotree
-nnoremap <silent> <Leader>u :UndotreeToggle<CR>
-
-" Gotta browse them files.
-nnoremap <Leader>n :NERDTreeToggle<CR>
-
-" Turn off search highlight.
-nnoremap <Leader><space> :nohlsearch<CR>
+nnoremap <silent> <Leader>gf :Gfetch<CR>
+nnoremap <silent> <Leader>gg :call OnlyGitStatus()<CR>
+nnoremap <silent> <Leader>gl :Commits<CR>
+nnoremap <silent> <Leader>gp :Gpush<CR>
 
 " Jump to next/previous linter warning.
 nnoremap ]l :ALENextWrap<CR>
@@ -243,13 +253,21 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
 
+" Add Svelte to ALE.
+let g:ale_fixers = { 'svelte': ['eslint', 'prettier', 'prettier_standard'] }
+let g:ale_linter_aliases = { 'svelte': ['css', 'javascript'] }
+let g:ale_linters = { 'svelte': ['stylelint', 'eslint'] }
+
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
+
+" Keep gitgutter from setting keys.
+let g:gitgutter_map_keys = 0
 
 " Statusline
 "   http://tdaly.co.uk/projects/vim-statusline-generator/
 set laststatus=2
-set statusline=\ %{StatuslineMode()}\ %{fugitive#head()}\ %f\ %r\ %=%{&ff}\ %{strlen(&fenc)?&fenc:'none'}\ %y\ %c:%l/%L\ |
+set statusline=%#PmenuSel#\ %{StatuslineMode()}\ %#Pmenu#\ %{fugitive#head()}\ %#NormalNC#\ %f\ %m\ %{LinterStatus()}\ %r\ %=%{&ff}\ %{strlen(&fenc)?&fenc:'none'}\ %y\ %c:%l/%L\ |
 
 function! StatuslineMode()
   let l:mode=mode()
@@ -270,4 +288,17 @@ function! StatuslineMode()
   elseif l:mode==#"!"
     return "SHELL"
   endif
+endfunction
+
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '' : printf(
+        \   '%dw %de',
+        \   all_non_errors,
+        \   all_errors
+        \)
 endfunction

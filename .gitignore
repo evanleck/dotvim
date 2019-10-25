@@ -10,3 +10,6 @@ undo/*
 
 # Ignore the pack directory altogether.
 pack
+
+# Ignore netrw's history file.
+.netrwhist
