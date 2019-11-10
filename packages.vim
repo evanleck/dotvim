@@ -15,7 +15,6 @@ call minpac#init({ 'verbose': 3 })
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 call minpac#add('adelarsq/vim-matchit')
-call minpac#add('airblade/vim-gitgutter')
 call minpac#add('cespare/vim-toml')
 call minpac#add('chriskempson/base16-vim')
 call minpac#add('dense-analysis/ale')

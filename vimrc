@@ -260,9 +260,6 @@ let g:ale_linters = { 'svelte': ['stylelint', 'eslint'] }
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
-" Keep gitgutter from setting keys.
-let g:gitgutter_map_keys = 0
-
 " Statusline
 "   http://tdaly.co.uk/projects/vim-statusline-generator/
 set laststatus=2
