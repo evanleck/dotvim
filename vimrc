@@ -96,6 +96,7 @@ set splitbelow                                            " Split horizontal win
 set splitright                                            " Split vertical windows right to the current windows
 set synmaxcol=500                                         " Only syntax highlight to the 500th column by default.
 set tabstop=2                                             " The One True Tab
+set showtabline=2                                         " Always show the tabline.
 set textwidth=80                                          " Turns out I kinda like 80...
 set ttyfast                                               " Who even knows?
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules     " Ignore certain files in tab-completion
