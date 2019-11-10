@@ -81,7 +81,6 @@ set incsearch                                             " search as characters
 set lazyredraw                                            " Don't update the screen while executing macros.
 set list                                                  " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
-set mouse=n                                               " Enable the mouse in normal mode.
 set nofoldenable                                          " Start with all folds off.
 set nomodeline                                            " No need for in-buffer settings.
 set noruler                                               " Disable the ruler since we write our own statusline.
