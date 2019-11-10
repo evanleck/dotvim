@@ -1,5 +1,4 @@
-" Open Git status over all other windows. Yes, this _will_ fuck up any window
-" layout you have set up.
+" Open Git status in a new tab.
 function! OnlyGitStatus()
-  execute ":Gstatus" | only
+  execute ":tabnew" | execute ":Gstatus" | only
 endfunction
