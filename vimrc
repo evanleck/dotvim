@@ -136,8 +136,10 @@ set guifont=Fira\ Code:h11
 set linespace=2
 
 " Netrw settings
-let g:netrw_liststyle = 3    " Tree style
-let g:netrw_browse_split = 4 " Open files selected in Netrw in the other split.
+let g:netrw_liststyle = 3           " Tree style
+let g:netrw_browse_split = 4        " Open files selected in Netrw in the other split.
+let g:netrw_hide_list = '.DS_Store' " Get outta here...
+let g:netrw_banner = 0              " Shhhh
 
 " Easier exiting from terminal mode.
 tnoremap <Esc> <C-\><C-n>
