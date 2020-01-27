@@ -141,8 +141,8 @@ let g:netrw_browse_split = 4        " Open files selected in Netrw in the other 
 let g:netrw_hide_list = '.DS_Store' " Get outta here...
 let g:netrw_banner = 0              " Shhhh
 
-" Easier exiting from terminal mode.
-tnoremap <Esc> <C-\><C-n>
+" Use escape to get out of fzf.
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 
 " Get the fucking alt key to do what I want in FZF...
 "   https://github.com/junegunn/fzf.vim/issues/78#issuecomment-175354775
