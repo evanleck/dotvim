@@ -132,7 +132,7 @@ augroup vimrc
 augroup END
 
 " Font options.
-set guifont=Fira\ Code:h11
+set guifont=SF\ Mono:h11
 set linespace=2
 
 " Netrw settings
