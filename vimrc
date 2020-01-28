@@ -185,6 +185,7 @@ nnoremap <silent> <Leader>fs :w<CR>
 nnoremap <silent> <Leader>, :Buffers<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
 nnoremap <silent> <Leader>bk :Bdelete<CR>
+nnoremap <silent> <Leader>bl :BCommits<CR>
 
 " Splits and windows.
 nnoremap <silent> <Leader>wq :q<CR>
