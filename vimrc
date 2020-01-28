@@ -177,14 +177,13 @@ nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
 " Files
-nnoremap <silent> <Leader>fs :w<CR>
-nnoremap <silent> <Leader>fx :Delete<CR>
 nnoremap <Leader>fm :Rename<Space>
+nnoremap <silent> <Leader>fK :Delete<CR>
+nnoremap <silent> <Leader>fs :w<CR>
 
 " Buffers
 nnoremap <silent> <Leader>, :Buffers<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
-nnoremap <silent> <Leader>bd :Bdelete<CR>
 nnoremap <silent> <Leader>bk :Bdelete<CR>
 
 " Splits and windows.
