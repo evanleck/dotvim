@@ -162,7 +162,7 @@ nnoremap <silent> <esc><esc> :nohlsearch<CR>
 " Netrw explorer.
 nnoremap <silent> <Leader>e :50vs +Ex .<CR>
 
-nnoremap <Leader>/ :Rg<Space>
+nnoremap <Leader>/ :Rg<CR>
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader>c :call CreateOrOpenTerminal()<CR>
 nnoremap <silent> <Leader>s :Tags<CR>
