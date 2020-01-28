@@ -89,6 +89,7 @@ set nospell
 set shiftround                                            " Shift to certain columns, not just n spaces
 set shiftwidth=2                                          " Number of spaces to shift for autoindent or >,<
 set showmatch                                             " highlight matching [{()}]
+set showtabline=2                                         " Always show the tabline.
 set smartcase                                             " Lets you search for ALL CAPS
 set softtabstop=2                                         " Spaces 'feel' like tabs
 set spelllang=en_us
@@ -96,7 +97,6 @@ set splitbelow                                            " Split horizontal win
 set splitright                                            " Split vertical windows right to the current windows
 set synmaxcol=500                                         " Only syntax highlight to the 500th column by default.
 set tabstop=2                                             " The One True Tab
-set showtabline=2                                         " Always show the tabline.
 set textwidth=80                                          " Turns out I kinda like 80...
 set ttyfast                                               " Who even knows?
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules     " Ignore certain files in tab-completion
