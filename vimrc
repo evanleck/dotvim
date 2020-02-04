@@ -181,6 +181,14 @@ nnoremap <Leader>fm :Rename<Space>
 nnoremap <silent> <Leader>fK :Delete<CR>
 nnoremap <silent> <Leader>fs :w<CR>
 
+" Quickfix
+nnoremap <silent> <Leader>cN :cnewer<CR>
+nnoremap <silent> <Leader>cP :colder<CR>
+nnoremap <silent> <Leader>ck :cclose<CR>
+nnoremap <silent> <Leader>cn :cn<CR>
+nnoremap <silent> <Leader>co :copen<CR>
+nnoremap <silent> <Leader>cp :cp<CR>
+
 " Buffers
 nnoremap <silent> <Leader>, :Buffers<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
