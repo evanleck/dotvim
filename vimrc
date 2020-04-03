@@ -276,11 +276,6 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
 
-" Add Svelte to ALE.
-let g:ale_fixers = { 'svelte': ['eslint', 'prettier', 'prettier_standard'] }
-let g:ale_linter_aliases = { 'svelte': ['css', 'javascript'] }
-let g:ale_linters = { 'svelte': ['stylelint', 'eslint'] }
-
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
