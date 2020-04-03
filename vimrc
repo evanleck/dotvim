@@ -137,8 +137,8 @@ augroup vimrc
 augroup END
 
 " Font options.
-set guifont=SF\ Mono:h11
-set linespace=2
+set guifont=JetBrains\ Mono:h11
+set linespace=0
 
 " Netrw settings
 let g:netrw_liststyle = 3           " Tree style
