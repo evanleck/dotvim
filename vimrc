@@ -166,10 +166,10 @@ nnoremap <silent> <esc><esc> :nohlsearch<CR>
 " Netrw explorer.
 nnoremap <silent> <Leader>e :50vs +Ex .<CR>
 
-nnoremap <Leader>/ :Rg<CR>
+nnoremap <Leader>s :Rg<CR>
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader>c :call CreateOrOpenTerminal()<CR>
-nnoremap <silent> <Leader>s :Tags<CR>
+nnoremap <silent> <Leader>t :Tags<CR>
 
 " What have I become?
 nnoremap <silent> <M-x> :Commands<CR>
@@ -182,7 +182,7 @@ nnoremap <silent> <C-l> :wincmd l<CR>
 
 " Files
 nnoremap <Leader>fm :Rename<Space>
-nnoremap <silent> <Leader>fK :Delete<CR>
+nnoremap <silent> <Leader>fD :Delete<CR>
 nnoremap <silent> <Leader>fs :w<CR>
 
 " Quickfix
@@ -196,8 +196,9 @@ nnoremap <silent> <Leader>cp :cp<CR>
 " Buffers
 nnoremap <silent> <Leader>, :Buffers<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
-nnoremap <silent> <Leader>bk :Bdelete<CR>
+nnoremap <silent> <Leader>bd :Bdelete<CR>
 nnoremap <silent> <Leader>bl :BCommits<CR>
+nnoremap <silent> <Leader>bt :BTags<CR>
 
 " Splits and windows.
 nnoremap <silent> <Leader>wq :q<CR>
@@ -213,6 +214,10 @@ nnoremap <silent> <Leader>gf :Gfetch<CR>
 nnoremap <silent> <Leader>gg :Gstatus<CR>
 nnoremap <silent> <Leader>gl :Commits<CR>
 nnoremap <silent> <Leader>gp :Gpush<CR>
+
+" Packages
+nnoremap <silent> <Leader>pc :PackClean<CR>
+nnoremap <silent> <Leader>pu :PackUpdate<CR>
 
 " Jump to next/previous linter warning.
 nnoremap ]l :ALENextWrap<CR>
