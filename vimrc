@@ -93,7 +93,7 @@ set nospell
 set shiftround                                            " Shift to certain columns, not just n spaces
 set shiftwidth=2                                          " Number of spaces to shift for autoindent or >,<
 set showmatch                                             " highlight matching [{()}]
-set showtabline=2                                         " Always show the tabline.
+set showtabline=1                                         " Only show the tabline as needed.
 set smartcase                                             " Lets you search for ALL CAPS
 set softtabstop=2                                         " Spaces 'feel' like tabs
 set spelllang=en_us
@@ -210,7 +210,7 @@ nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gc :Gcommit<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gf :Gfetch<CR>
-nnoremap <silent> <Leader>gg :call OnlyGitStatus()<CR>
+nnoremap <silent> <Leader>gg :Gstatus<CR>
 nnoremap <silent> <Leader>gl :Commits<CR>
 nnoremap <silent> <Leader>gp :Gpush<CR>
 
