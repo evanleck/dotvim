@@ -82,6 +82,7 @@ set hidden                                                " Keep buffers around.
 set hlsearch                                              " highlight matches
 set ignorecase                                            " Ignore case by default.
 set incsearch                                             " search as characters are entered
+set laststatus=2
 set lazyredraw                                            " Don't update the screen while executing macros.
 set list                                                  " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
@@ -283,41 +284,27 @@ let g:ale_linters = { 'svelte': ['stylelint', 'eslint'] }
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
-" Statusline
-"   http://tdaly.co.uk/projects/vim-statusline-generator/
-set laststatus=2
-set statusline=%#PmenuSel#\ %{StatuslineMode()}\ %#Pmenu#\ %{fugitive#head()}\ %#NormalNC#\ %f\ %m\ %{LinterStatus()}\ %r\ %=%{&ff}\ %{strlen(&fenc)?&fenc:'none'}\ %y\ %c:%l/%L\ |
-
-function! StatuslineMode()
-  let l:mode=mode()
-  if l:mode==#"n"
-    return "NORMAL"
-  elseif l:mode==?"v"
-    return "VISUAL"
-  elseif l:mode==#"i"
-    return "INSERT"
-  elseif l:mode==#"R"
-    return "REPLACE"
-  elseif l:mode==?"s"
-    return "SELECT"
-  elseif l:mode==#"t"
-    return "TERMINAL"
-  elseif l:mode==#"c"
-    return "COMMAND"
-  elseif l:mode==#"!"
-    return "SHELL"
-  endif
-endfunction
-
-function! LinterStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-
-  return l:counts.total == 0 ? '' : printf(
-        \   '%dw %de',
-        \   all_non_errors,
-        \   all_errors
-        \)
-endfunction
+let g:lightline = {
+      \ 'colorscheme': 'dracula',
+      \ 'active': {
+      \   'left': [
+      \       ['mode', 'paste'],
+      \       ['gitbranch', 'readonly', 'filename', 'modified']
+      \   ],
+      \   'right': [
+      \       ['linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
+      \       ['lineinfo'],
+      \       ['fileformat', 'fileencoding', 'filetype']
+      \   ]
+      \ },
+      \ 'component_expand': {
+      \   'linter_checking': 'lightline#ale#checking',
+      \   'linter_infos': 'lightline#ale#infos',
+      \   'linter_warnings': 'lightline#ale#warnings',
+      \   'linter_errors': 'lightline#ale#errors',
+      \   'linter_ok': 'lightline#ale#ok',
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
