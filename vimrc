@@ -66,6 +66,10 @@ set number relativenumber
 set autoindent breakindent
 set breakindentopt=shift:2
 
+" Omni completion.
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menu,preview
+
 " White space, tabs, and text.
 set autoread                                              " Don't bother me when a file changes
 set expandtab                                             " No tabs
