@@ -266,6 +266,9 @@ let g:fzf_commits_log_options = '--graph --color=always
 " Command to generate tags file
 let g:fzf_tags_command = 'ctags'
 
+" Disable the preview window.
+let g:fzf_preview_window = ''
+
 " ALE
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
