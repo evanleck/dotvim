@@ -122,18 +122,19 @@ augroup vimrc
   " Clear all autocmds in the group
   autocmd!
 
-  " Jump to last cursor position unless it's invalid or in an event handler
-  " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L95
+  " Jump to last cursor position unless it's invalid or in an event handler.
+  "   https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
 
-  " Resize panes when window/terminal gets resize
+  " Resize panes when window/terminal gets resized.
   autocmd VimResized * :wincmd =
 
   " Trim trailing whitespace.
   autocmd BufWritePre * call TrimTrailingWhitespace()
+  autocmd BufWritePre * call TrimTrailingEmptyLines()
 augroup END
 
 " Font options.
