@@ -3,11 +3,6 @@ backup/*
 swap/*
 undo/*
 
-# But keep them around.
-!backup/.gitkeep
-!swap/.gitkeep
-!undo/.gitkeep
-
 # Ignore the pack directory altogether.
 pack
 

@@ -17,9 +17,6 @@ if &compatible
   set nocompatible
 endif
 
-" Load package business.
-source ~/.vim/packages.vim
-
 " Add fzf to our runtime path.
 set runtimepath+=/usr/local/opt/fzf
 
@@ -47,7 +44,7 @@ if (has("esckeys"))
 endif
 
 " Color scheme setup.
-packadd! dracula
+packadd! dracula-vim
 colorscheme dracula
 
 " Central backup and undo directories.
@@ -216,10 +213,6 @@ nnoremap <silent> <Leader>gf :Gfetch<CR>
 nnoremap <silent> <Leader>gg :Gstatus<CR>
 nnoremap <silent> <Leader>gl :Commits<CR>
 nnoremap <silent> <Leader>gp :Gpush<CR>
-
-" Packages
-nnoremap <silent> <Leader>pc :PackClean<CR>
-nnoremap <silent> <Leader>pu :PackUpdate<CR>
 
 " Jump to next/previous linter warning.
 nnoremap ]l :ALENextWrap<CR>
