@@ -28,6 +28,7 @@ git@github.com:maximbaz/lightline-ale.git \
 git@github.com:moll/vim-bbye.git \
 git@github.com:othree/html5.vim.git \
 git@github.com:pangloss/vim-javascript.git \
+git@github.com:preservim/nerdtree.git \
 git@github.com:svermeulen/vim-easyclip.git \
 git@github.com:tpope/vim-commentary.git \
 git@github.com:tpope/vim-endwise.git \

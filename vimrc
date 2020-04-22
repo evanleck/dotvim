@@ -138,12 +138,6 @@ augroup END
 set guifont=JetBrains\ Mono:h11
 set linespace=0
 
-" Netrw settings
-let g:netrw_liststyle = 3           " Tree style
-let g:netrw_browse_split = 4        " Open files selected in Netrw in the other split.
-let g:netrw_hide_list = '.DS_Store' " Get outta here...
-let g:netrw_banner = 0              " Shhhh
-
 " Use escape to get out of fzf.
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 
@@ -162,8 +156,8 @@ let mapleader = " "
 " Get outta here highlights.
 nnoremap <silent> <esc><esc> :nohlsearch<CR>
 
-" Netrw explorer.
-nnoremap <silent> <Leader>e :50vs +Ex .<CR>
+" NERDTree explorer.
+nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
 nnoremap <Leader>s :Rg<CR>
 nnoremap <silent> <Leader><Leader> :Files<CR>
@@ -264,6 +258,10 @@ let g:fzf_tags_command = 'ctags'
 " Disable the preview window.
 let g:fzf_preview_window = ''
 
+" NERDTree
+let NERDTreeWinPos = 'right'
+let NERDTreeWinSize = 60
+
 " ALE
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_ruby_rubocop_executable = 'bundle'
@@ -274,6 +272,7 @@ let g:ale_sign_warning = '▲'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
+" Lightline
 let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
