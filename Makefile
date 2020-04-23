@@ -18,6 +18,7 @@ git@github.com:cespare/vim-toml.git \
 git@github.com:dense-analysis/ale.git \
 git@github.com:docunext/closetag.vim.git \
 git@github.com:ekalinin/Dockerfile.vim.git \
+git@github.com:elixir-editors/vim-elixir.git \
 git@github.com:evanleck/vim-svelte.git \
 git@github.com:itchyny/lightline.vim.git \
 git@github.com:jiangmiao/auto-pairs.git \
