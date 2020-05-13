@@ -255,8 +255,11 @@ let g:fzf_commits_log_options = '--graph --color=always
 " Command to generate tags file
 let g:fzf_tags_command = 'ctags'
 
+" Disable the preview window.
+let g:fzf_preview_window = ''
+
 " Open FZF in a popup window.
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 
 " NERDTree
 let NERDTreeWinPos = 'right'
