@@ -21,7 +21,7 @@ endif
 set runtimepath+=/usr/local/opt/fzf
 
 " Get the colors.
-if (has("termguicolors"))
+if has("termguicolors")
   set termguicolors
 endif
 
