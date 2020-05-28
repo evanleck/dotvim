@@ -70,6 +70,7 @@ set completeopt=menu,preview
 " White space, tabs, and text.
 set autoread                                              " Don't bother me when a file changes
 set expandtab                                             " No tabs
+set fillchars+=vert:│                                     " Make the divider between splits a solid line.
 set fixendofline                                          " Always end with a new line.
 set foldmethod=manual                                     " Force manual folding.
 set formatoptions+=j                                      " Remove comments when joining lines.
