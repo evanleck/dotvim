@@ -160,12 +160,6 @@ nnoremap <silent> <Leader>t :Tags<CR>
 " What have I become?
 nnoremap <silent> <M-x> :Commands<CR>
 
-" Get between splits quicker and easier.
-nnoremap <silent> <C-h> :wincmd h<CR>
-nnoremap <silent> <C-j> :wincmd j<CR>
-nnoremap <silent> <C-k> :wincmd k<CR>
-nnoremap <silent> <C-l> :wincmd l<CR>
-
 " Files
 nnoremap <Leader>fm :Rename<Space>
 nnoremap <silent> <Leader>fD :Delete<CR>
@@ -191,6 +185,22 @@ nnoremap <silent> <Leader>wq :q<CR>
 nnoremap <silent> <Leader>ws :sp<CR>
 nnoremap <silent> <Leader>wv :vs<CR>
 nnoremap <silent> <Leader>wo :only<CR>
+
+nnoremap <silent> <Leader>wl :wincmd l<CR>
+nnoremap <silent> <Leader>wh :wincmd h<CR>
+nnoremap <silent> <Leader>wj :wincmd j<CR>
+nnoremap <silent> <Leader>wk :wincmd k<CR>
+
+nnoremap <silent> <Leader>wL :wincmd L<CR>
+nnoremap <silent> <Leader>wH :wincmd H<CR>
+nnoremap <silent> <Leader>wJ :wincmd J<CR>
+nnoremap <silent> <Leader>wK :wincmd K<CR>
+
+" Get between splits quicker and easier.
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
 
 " Fugitive
 nnoremap <silent> <Leader>gb :Gblame<CR>
