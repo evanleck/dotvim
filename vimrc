@@ -75,7 +75,6 @@ set fixendofline                                          " Always end with a ne
 set foldmethod=manual                                     " Force manual folding.
 set formatoptions+=j                                      " Remove comments when joining lines.
 set formatoptions-=t                                      " Don't wrap my code lines.
-set guioptions-=e                                         " Gimme those Vim-native tabs, damnit!
 set hidden                                                " Keep buffers around.
 set hlsearch                                              " highlight matches
 set ignorecase                                            " Ignore case by default.
@@ -110,12 +109,6 @@ if (has("ballooneval"))
   set noballooneval
 endif
 
-" Remove all the scrollbars.
-set guioptions-=r
-set guioptions-=l
-set guioptions-=R
-set guioptions-=L
-
 augroup vimrc
   " Clear all autocmds in the group
   autocmd!
@@ -136,7 +129,6 @@ augroup vimrc
 augroup END
 
 " Font options.
-set guifont=JetBrains\ Mono:h11
 set linespace=0
 
 " Use escape to get out of fzf.
