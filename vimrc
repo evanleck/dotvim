@@ -83,6 +83,7 @@ set laststatus=2
 set lazyredraw                                            " Don't update the screen while executing macros.
 set list                                                  " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
+set mouse=nv
 set nofoldenable                                          " Start with all folds off.
 set nomodeline                                            " No need for in-buffer settings.
 set noruler                                               " Disable the ruler since we write our own statusline.
