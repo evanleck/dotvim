@@ -17,9 +17,6 @@ if &compatible
   set nocompatible
 endif
 
-" Add fzf to our runtime path.
-set runtimepath+=/usr/local/opt/fzf
-
 " Get the colors.
 if has("termguicolors")
   set termguicolors

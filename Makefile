@@ -22,6 +22,7 @@ git@github.com:elixir-editors/vim-elixir.git \
 git@github.com:evanleck/vim-svelte.git \
 git@github.com:itchyny/lightline.vim.git \
 git@github.com:jiangmiao/auto-pairs.git \
+git@github.com:junegunn/fzf.git \
 git@github.com:junegunn/fzf.vim.git \
 git@github.com:junegunn/vim-easy-align.git \
 git@github.com:ludovicchabant/vim-gutentags.git \
