@@ -152,7 +152,6 @@ nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
 nnoremap <Leader>s :Rg<CR>
 nnoremap <silent> <Leader><Leader> :Files<CR>
-nnoremap <silent> <Leader>c :call CreateOrOpenTerminal()<CR>
 nnoremap <silent> <Leader>t :Tags<CR>
 
 " What have I become?
