@@ -36,7 +36,7 @@ filetype plugin indent on
 syntax on
 
 " Don't wait for a key after Escape in insert mode
-if (has("esckeys"))
+if has("esckeys")
   set noesckeys
 endif
 
