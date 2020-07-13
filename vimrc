@@ -42,6 +42,7 @@ endif
 
 " Color scheme setup.
 packadd! dracula-vim
+set background=dark
 colorscheme dracula
 
 " Central backup and undo directories.
