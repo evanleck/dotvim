@@ -201,13 +201,13 @@ nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
 " Fugitive
+nnoremap <Leader>gP :Gpush<CR>
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gc :Gcommit<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gf :Gfetch<CR>
 nnoremap <silent> <Leader>gg :Gstatus<CR>
 nnoremap <silent> <Leader>gl :Commits<CR>
-nnoremap <silent> <Leader>gp :Gpush<CR>
 
 " Jump to next/previous linter warning.
 nnoremap ]l :ALENextWrap<CR>
