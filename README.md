@@ -1,6 +1,1 @@
-# Dot Vim
-
-My Vim configuration, including filetype plugins.
-
-My packages are managed in the Makefile and rely on Vim's native package
-feature.
+This repository has been archived and its contents moved to [my dotfiles](https://github.com/evanleck/dotfiles).
